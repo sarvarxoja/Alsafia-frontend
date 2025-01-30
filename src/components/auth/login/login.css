@@ -1,0 +1,48 @@
+.main_auth_container {
+  background: url("../../../../public/bg.jpg") center / cover;
+}
+
+.enter_btn {
+  background: #111827;
+  transition: 0.5;
+  height: 49px;
+  font-size: 20px;
+}
+
+.enter_btn:hover {
+  background: #00343C;
+}
+
+.login_form {
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 40px rgba(129, 236, 174, 0.6);
+  padding: 20px;
+}
+
+.alsafia_logo {
+  width: 200px;
+  user-select: none;
+}
+
+.loader_login {
+  position: relative;
+  bottom: -3px;
+  width: 23px;
+  height: 23px;
+  border: 5px solid #FFF;
+  border-bottom-color: #ED8D26;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 

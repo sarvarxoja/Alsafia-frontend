@@ -1,0 +1,12 @@
+.chart_width {
+  max-width: 90%;
+}
+
+.staff_dashboard_link {
+  color: #3b82f6;
+  font-weight: 740;
+}
+
+.staff_dashboard_link:hover {
+    text-decoration: underline;
+}
