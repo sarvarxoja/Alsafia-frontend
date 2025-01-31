@@ -27,19 +27,17 @@ const Login = ({ access }) => {
     setLoad(true);
     try {
       let { data } = await axios.post("/auth/login", formData);
-      console.log(data);
       if (data.status === 200) {
         if (data.role === "hr") {
           navigate("/employees");
-          // window.location.reload();
+          window.location.reload();
         } else {
           navigate("/home");
-          // window.location.reload();
+          window.location.reload();
         }
       }
     } catch (error) {
-      console.log(error);
-      // toast(error.response.data.msg, { type: "error" });
+      toast(error.response.data.msg, { type: "error" });
     } finally {
       setLoad(false);
     }
