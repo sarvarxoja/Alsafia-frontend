@@ -56,7 +56,7 @@ export const ProductPage = () => {
         <h2 className="text-2xl font-semibold mb-4">Mahsulot Ma'lumotlari</h2>
         <div className="flex items-center gap-4 mb-4">
           <img
-            src={`http://localhost:1282/${data.productImage}`}
+            src={`http://inchain.uz/api${data.productImage}`}
             alt={data.name}
             className="product_image pointer"
           />

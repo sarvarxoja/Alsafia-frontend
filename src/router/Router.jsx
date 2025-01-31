@@ -23,9 +23,8 @@ export const Router = () => {
 
   async function checkAuth() {
     try {
-      // Access tokenni tekshirish
       let data = await axios.get("/auth/check");
-      setAccess(true); // Access holatini yangilash
+      setAccess(true); 
     } catch (error) {
       await refreshToken();
     }
@@ -36,15 +35,13 @@ export const Router = () => {
       const response = await axios.post("/auth/refresh/token");
       console.log(response);
       if (response.status === 200) {
-        setAccess(true); // Refresh token yangilanganda, accessTokenni yangilash
+        setAccess(true); 
       } else {
-        // Agar refreshTokenni yangilash mumkin bo'lmasa, login sahifasiga yo'naltirish
         setAccess(false);
         navigate("/auth/login");
       }
     } catch (error) {
       console.log(error);
-      // Agar refreshToken ham yaroqsiz bo'lsa, login sahifasiga yo'naltirish
       setAccess(false);
       navigate("/auth/login");
     }
@@ -71,7 +68,6 @@ export const Router = () => {
     return <Login />;
   }
 
-  console.log(access);
 
   return (
     <div>

@@ -220,7 +220,7 @@ export const ProductsPage = () => {
                       </td>
                       <td className="border p-3 text-left">
                         <img
-                          src={`http://localhost:1282/${item.productImage}`}
+                          src={`http://inchain.uz/api${item.productImage}`}
                           alt="mahsulotning rasmi"
                           className="product_image pointer"
                         />
