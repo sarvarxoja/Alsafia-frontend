@@ -39,7 +39,7 @@ const Login = ({ access }) => {
       }
     } catch (error) {
       console.log(error);
-      toast(error.response.data.msg || "Xatolik yuz berdi", { type: "error" });
+      // toast(error.response.data.msg, { type: "error" });
     } finally {
       setLoad(false);
     }

@@ -19,25 +19,22 @@ import { DatePickerPage } from "../components/employee/EmployeeDasboard";
 export const Router = () => {
   const navigate = useNavigate();
   const [load, setLoad] = useState(true);
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(null);
 
   async function checkAuth() {
     try {
       // Access tokenni tekshirish
       let data = await axios.get("/auth/check");
-      console.log(data);
       setAccess(true); // Access holatini yangilash
     } catch (error) {
-      console.log(error);
-      // Agar token yaroqsiz bo'lsa, refreshTokenni chaqirish
       await refreshToken();
     }
   }
 
-  // refreshTokenni yangilash uchun function
   async function refreshToken() {
     try {
       const response = await axios.post("/auth/refresh/token");
+      console.log(response);
       if (response.status === 200) {
         setAccess(true); // Refresh token yangilanganda, accessTokenni yangilash
       } else {
@@ -46,6 +43,7 @@ export const Router = () => {
         navigate("/auth/login");
       }
     } catch (error) {
+      console.log(error);
       // Agar refreshToken ham yaroqsiz bo'lsa, login sahifasiga yo'naltirish
       setAccess(false);
       navigate("/auth/login");

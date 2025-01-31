@@ -6,7 +6,7 @@ import { createRoot } from "react-dom/client";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router } from "react-router-dom";
 
-axios.defaults.baseURL = "http://45.92.173.181:1282";
+axios.defaults.baseURL = "https://inchain.uz/api";
 axios.defaults.headers.common["x-api-key"] = "Bearer alsafia_api_key_1812";
 axios.defaults.withCredentials = true;
 
