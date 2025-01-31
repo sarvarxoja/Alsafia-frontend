@@ -33,7 +33,6 @@ export const Router = () => {
   async function refreshToken() {
     try {
       const response = await axios.post("/auth/refresh/token");
-      console.log(response);
       if (response.status === 200) {
         setAccess(true); 
       } else {
@@ -41,7 +40,6 @@ export const Router = () => {
         navigate("/auth/login");
       }
     } catch (error) {
-      console.log(error);
       setAccess(false);
       navigate("/auth/login");
     }
